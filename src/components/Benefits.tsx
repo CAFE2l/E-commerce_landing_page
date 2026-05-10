@@ -1,59 +1,45 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Zap, Shield, BarChart3, Sparkles } from "lucide-react"
+import { Zap, Shield, FolderTree } from "lucide-react"
 
-const benefits = [
+const diferenciais = [
   {
     icon: Zap,
     title: "Performance",
     description:
-      "Infraestrutura otimizada para entregar seus assets com máxima velocidade e disponibilidade global.",
+      "Sites rápidos e otimizados com foco em Core Web Vitals e experiência do usuário.",
     gradient: "from-red-500/10 via-orange-500/5 to-transparent",
     borderGlow: "group-hover:border-red-500/30 group-hover:shadow-[0_0_40px_rgba(255,60,56,0.12)]",
     iconBg: "bg-red-500/10",
     iconColor: "text-red-400",
-    glowColor: "shadow-[0_0_30px_rgba(255,60,56,0.1)]",
   },
   {
     icon: Shield,
     title: "Segurança",
     description:
-      "Proteção de dados e transações com criptografia de ponta a ponta e certificação digital.",
+      "Implementação de boas práticas contra SQL Injection, XSS e outras vulnerabilidades web.",
     gradient: "from-orange-500/10 via-yellow-400/5 to-transparent",
     borderGlow: "group-hover:border-orange-500/30 group-hover:shadow-[0_0_40px_rgba(255,122,0,0.12)]",
     iconBg: "bg-orange-500/10",
     iconColor: "text-orange-400",
-    glowColor: "shadow-[0_0_30px_rgba(255,122,0,0.1)]",
   },
   {
-    icon: BarChart3,
-    title: "Escalabilidade",
+    icon: FolderTree,
+    title: "Organização",
     description:
-      "Arquitetura preparada para crescer com você, suportando milhares de acessos simultâneos.",
+      "Código limpo, componentizado e estrutura escalável para projetos de longo prazo.",
     gradient: "from-yellow-400/10 via-red-500/5 to-transparent",
     borderGlow: "group-hover:border-yellow-400/30 group-hover:shadow-[0_0_40px_rgba(255,208,0,0.12)]",
     iconBg: "bg-yellow-400/10",
     iconColor: "text-yellow-400",
-    glowColor: "shadow-[0_0_30px_rgba(255,208,0,0.1)]",
-  },
-  {
-    icon: Sparkles,
-    title: "Experiência Premium",
-    description:
-      "Interface intuitiva e fluida com design pensado nos mínimos detalhes para você.",
-    gradient: "from-red-500/10 via-yellow-400/5 to-transparent",
-    borderGlow: "group-hover:border-red-500/30 group-hover:shadow-[0_0_40px_rgba(255,60,56,0.12)]",
-    iconBg: "bg-red-500/10",
-    iconColor: "text-red-400",
-    glowColor: "shadow-[0_0_30px_rgba(255,60,56,0.1)]",
   },
 ]
 
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.12 },
+    transition: { staggerChildren: 0.15 },
   },
 }
 
@@ -68,13 +54,13 @@ const cardVariants = {
 
 export default function Benefits() {
   return (
-    <section id="beneficios" className="relative overflow-hidden bg-cafe-black py-24">
+    <section id="diferenciais" className="relative overflow-hidden bg-cafe-black py-24">
       <div className="bg-dots pointer-events-none absolute inset-0 opacity-10" />
 
-      <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-red-500/8 blur-[150px]" />
-      <div className="absolute right-0 bottom-0 h-[300px] w-[300px] rounded-full bg-orange-500/5 blur-[120px]" />
+      <div className="absolute left-1/2 top-1/3 h-[450px] w-[450px] -translate-x-1/2 rounded-full bg-red-500/8 blur-[140px]" />
+      <div className="absolute right-0 bottom-0 h-[300px] w-[300px] rounded-full bg-yellow-400/5 blur-[100px]" />
 
-      <div className="absolute top-0 left-0 right-0 led-line" style={{ background: "linear-gradient(90deg, transparent, rgba(255,122,0,0.3), rgba(255,208,0,0.3), transparent)" }} />
+      <div className="absolute top-0 left-0 right-0 led-line" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
@@ -85,15 +71,14 @@ export default function Benefits() {
           className="mb-16 text-center"
         >
           <span className="mb-4 inline-block rounded-full border border-red-500/20 bg-red-500/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-red-400 backdrop-blur-sm">
-            Benefícios
+            Diferenciais
           </span>
           <h2 className="mb-4 text-4xl font-black tracking-tight text-white sm:text-5xl">
             Por que{" "}
-            <span className="text-gradient glow-text">escolher</span> a
-            CAFÉ STORE?
+            <span className="text-gradient glow-text">me contratar?</span>
           </h2>
           <p className="mx-auto max-w-2xl text-zinc-400">
-            Uma plataforma construída para creators que pensam no futuro.
+            Qualidade e compromisso em cada linha de código.
           </p>
         </motion.div>
 
@@ -102,30 +87,30 @@ export default function Benefits() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="mx-auto grid max-w-4xl gap-6 md:grid-cols-3"
         >
-          {benefits.map((benefit) => {
-            const Icon = benefit.icon
+          {diferenciais.map((item) => {
+            const Icon = item.icon
             return (
               <motion.div
-                key={benefit.title}
+                key={item.title}
                 variants={cardVariants}
-                className={`group relative cursor-default overflow-hidden rounded-2xl border border-white/[0.06] bg-gradient-to-br ${benefit.gradient} p-8 transition-all duration-500 ease-out hover:scale-[1.03] ${benefit.borderGlow} ${benefit.glowColor}`}
+                className={`group relative cursor-default overflow-hidden rounded-2xl border border-white/[0.06] bg-gradient-to-br ${item.gradient} p-8 transition-all duration-500 ease-out hover:scale-[1.03] ${item.borderGlow}`}
               >
                 <div className="absolute inset-0 bg-white/[0.02] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
                 <div className="relative z-10">
                   <div
-                    className={`mb-5 flex h-14 w-14 items-center justify-center rounded-xl ${benefit.iconBg} backdrop-blur-sm transition-all duration-500 group-hover:scale-110 ${benefit.iconColor}`}
+                    className={`mb-5 flex h-14 w-14 items-center justify-center rounded-xl ${item.iconBg} backdrop-blur-sm transition-all duration-500 group-hover:scale-110 ${item.iconColor}`}
                   >
                     <Icon size={26} />
                   </div>
 
-                  <h3 className="mb-3 text-lg font-bold text-white transition-colors duration-300 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-red-400 group-hover:via-orange-400 group-hover:to-yellow-400 group-hover:bg-clip-text">
-                    {benefit.title}
+                  <h3 className={`mb-3 text-lg font-bold text-white transition-colors duration-300 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-red-400 group-hover:via-orange-400 group-hover:to-yellow-400 group-hover:bg-clip-text`}>
+                    {item.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-zinc-400 transition-colors duration-300 group-hover:text-zinc-300">
-                    {benefit.description}
+                    {item.description}
                   </p>
                 </div>
 

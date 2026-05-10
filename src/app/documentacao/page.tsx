@@ -2,12 +2,11 @@ import DocumentationViewer from "@/components/DocumentationViewer"
 import DocumentationCard from "@/components/DocumentationCard"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
-import { FileText, FolderTree, Database, LayoutDashboard, ShoppingCart, Map, Layers } from "lucide-react"
+import { FileText, Database, LayoutDashboard, ShoppingCart, Map, Layers } from "lucide-react"
 
 const infoItems = [
   { icon: FileText, text: "Visão geral do projeto" },
   { icon: Layers, text: "Stack oficial" },
-  { icon: FolderTree, text: "Estrutura de pastas" },
   { icon: Database, text: "Banco de dados" },
   { icon: LayoutDashboard, text: "Funcionalidades" },
   { icon: ShoppingCart, text: "Checkout" },
@@ -63,7 +62,7 @@ export default function DocumentacaoPage() {
 
       <section className="relative pb-24">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             {infoItems.map((item) => {
               const Icon = item.icon
               return (

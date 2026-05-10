@@ -89,11 +89,11 @@ export default function Hero() {
             className="flex flex-col items-center gap-4 sm:flex-row lg:items-start"
           >
             <a
-              href="#tecnologias"
+              href="#servicos"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 p-[1px] transition-all duration-500 ease-out hover:scale-105 hover:shadow-[0_0_40px_rgba(255,122,0,0.35)]"
             >
               <span className="block rounded-xl bg-cafe-black px-8 py-3.5 text-sm font-semibold text-white transition-all duration-300 group-hover:bg-transparent">
-                Explorar Produtos
+                Explorar
               </span>
             </a>
             <a

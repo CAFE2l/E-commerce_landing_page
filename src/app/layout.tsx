@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "CAFÉ STORE — Sua Identidade Digital",
   description:
     "Overlays, assets, produtos digitais e uma experiência visual criada para creators modernos.",
+  icons: {
+    icon: "/favicon.png",
+  },
   openGraph: {
     title: "CAFÉ STORE",
     description: "Tudo para sua identidade digital.",

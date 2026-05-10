@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code2, Globe } from "lucide-react"
 
 const footerLinks = [
   {
@@ -32,7 +31,6 @@ const footerLinks = [
 ]
 
 const socialLinks = [
-  { label: "GitHub", href: "#", icon: <Code2 size={18} /> },
   {
     label: "Discord",
     href: "#",
@@ -45,8 +43,19 @@ const socialLinks = [
     ),
   },
   {
+    label: "Portfólio",
+    href: "https://main-portfolio-sigma-flame.vercel.app/",
+    icon: (
+      <img
+        src="/icons/portfolio.jpg"
+        alt="Portfólio"
+        className="h-5 w-5 rounded object-cover"
+      />
+    ),
+  },
+  {
     label: "E-mail",
-    href: "#",
+    href: "mailto:gutiajs@gmail.com",
     icon: (
       <img
         src="/icons/8-bit/gmail.png"
@@ -55,16 +64,6 @@ const socialLinks = [
       />
     ),
   },
-  { label: "Site", href: "#", icon: <Globe size={18} /> },
-]
-
-const brandIcons = [
-  { file: "youtube.png", label: "YouTube" },
-  { file: "twitter.png", label: "Twitter" },
-  { file: "whatsapp.png", label: "WhatsApp" },
-  { file: "telegram.png", label: "Telegram" },
-  { file: "linkedin.png", label: "LinkedIn" },
-  { file: "pinterest.png", label: "Pinterest" },
 ]
 
 export default function Footer() {
@@ -99,11 +98,13 @@ export default function Footer() {
               Sua identidade digital começa aqui. Overlays, assets e muito mais
               para creators modernos.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-zinc-500 transition-all duration-300 hover:bg-red-500/10 hover:text-red-400 hover:shadow-[0_0_15px_rgba(255,60,56,0.15)]"
                 >
@@ -143,35 +144,6 @@ export default function Footer() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="mt-12 border-t border-white/5 pt-8"
-        >
-          <p className="mb-4 text-center text-[10px] font-medium uppercase tracking-[0.2em] text-zinc-600">
-            Presença digital do criador
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-5">
-            {brandIcons.map((brand) => (
-              <div
-                key={brand.label}
-                className="group relative flex h-10 w-10 items-center justify-center rounded-lg bg-white/[0.03] transition-all duration-300 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,60,56,0.1)]"
-              >
-                <img
-                  src={`/icons/8-bit/${brand.file}`}
-                  alt={brand.label}
-                  className="h-6 w-6 object-contain opacity-60 transition-all duration-300 group-hover:scale-110 group-hover:opacity-100 pixelated"
-                />
-                <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap text-[9px] text-zinc-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  {brand.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
