@@ -1,43 +1,39 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const footerLinks = [
   {
     label: "Tecnologias",
     links: [
-      { name: "HTML/CSS", href: "#" },
-      { name: "JavaScript", href: "#" },
-      { name: "PHP 8", href: "#" },
-      { name: "MySQL", href: "#" },
+      { name: "HTML/CSS" },
+      { name: "JavaScript" },
+      { name: "PHP 8" },
+      { name: "MySQL" },
     ],
   },
   {
     label: "Serviços",
     links: [
       { name: "Cloudinary", href: "https://cloudinary.com" },
-      { name: "Mercado Pago", href: "#" },
-      { name: "InfinityFree", href: "#" },
+      { name: "Mercado Pago", href: "https://www.mercadopago.com.mx/" },
+      { name: "InfinityFree", href: "https://www.infinityfree.com" },
     ],
   },
   {
     label: "Links",
-    links: [
-      { name: "Documentação", href: "/documentacao" },
-      { name: "Status", href: "#" },
-      { name: "Changelog", href: "#" },
-    ],
+    links: [{ name: "Documentação", href: "/documentacao" }],
   },
-]
+];
 
 const socialLinks = [
   {
-    label: "Discord",
-    href: "#",
+    label: "Contact",
+    href: "https://cafeagencias.vercel.app",
     icon: (
       <img
-        src="/icons/8-bit/discord.png"
-        alt="Discord"
+        src="/icons/8-bit/favicon.png"
+        alt="Contact"
         className="h-5 w-5 object-contain pixelated"
       />
     ),
@@ -64,7 +60,7 @@ const socialLinks = [
       />
     ),
   },
-]
+];
 
 export default function Footer() {
   return (
@@ -156,28 +152,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} CAFÉ STORE. Todos os direitos
             reservados.
           </p>
-          <div className="flex items-center gap-6">
-            <a
-              href="#"
-              className="text-xs text-zinc-600 transition-colors duration-300 hover:text-zinc-400"
-            >
-              Privacidade
-            </a>
-            <a
-              href="#"
-              className="text-xs text-zinc-600 transition-colors duration-300 hover:text-zinc-400"
-            >
-              Termos
-            </a>
-            <a
-              href="#"
-              className="text-xs text-zinc-600 transition-colors duration-300 hover:text-zinc-400"
-            >
-              Cookies
-            </a>
-          </div>
+          <div className="flex items-center gap-6"></div>
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }

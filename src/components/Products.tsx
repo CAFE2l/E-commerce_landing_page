@@ -1,14 +1,13 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Code, Palette, Video } from "lucide-react"
+import { motion } from "framer-motion";
+import { Palette, Video } from "lucide-react";
 
 const services = [
   {
-    icon: Code,
+    img: "/icons/vscode.png",
     title: "Desenvolvimento Full-Stack",
-    description:
-      "Criação de sites, e-commerces e aplicações web robustas.",
+    description: "Criação de sites, e-commerces e aplicações web robustas.",
     techs: ["HTML5", "CSS3", "JavaScript", "React", "PHP", "MySQL"],
     gradient: "from-red-500/10 via-orange-500/5 to-transparent",
     borderGlow: "group-hover:border-red-500/30",
@@ -16,7 +15,7 @@ const services = [
     iconBg: "bg-red-500/10",
   },
   {
-    icon: Palette,
+    img: "/icons/figma.png",
     title: "Design & UI/UX",
     description:
       "Interfaces modernas, focadas em experiência do usuário e identidade visual forte.",
@@ -27,7 +26,7 @@ const services = [
     iconBg: "bg-orange-500/10",
   },
   {
-    icon: Video,
+    img: "icons/video.png",
     title: "Edição de Vídeo & Motion",
     description:
       "Edição dinâmica para redes sociais e apresentações comerciais.",
@@ -37,14 +36,14 @@ const services = [
     iconColor: "text-yellow-400",
     iconBg: "bg-yellow-400/10",
   },
-]
+];
 
 const containerVariants = {
   hidden: {},
   visible: {
     transition: { staggerChildren: 0.15 },
   },
-}
+};
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -53,11 +52,14 @@ const cardVariants = {
     y: 0,
     transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as const },
   },
-}
+};
 
 export default function Products() {
   return (
-    <section id="servicos" className="relative overflow-hidden bg-cafe-black py-24">
+    <section
+      id="servicos"
+      className="relative overflow-hidden bg-cafe-black py-24"
+    >
       <div className="bg-grid pointer-events-none absolute inset-0 opacity-15" />
 
       <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-red-500/10 blur-[150px]" />
@@ -77,8 +79,7 @@ export default function Products() {
             Serviços
           </span>
           <h2 className="mb-4 text-4xl font-black tracking-tight text-white sm:text-5xl">
-            Stack &{" "}
-            <span className="text-gradient glow-text">Serviços</span>
+            Stack & <span className="text-gradient glow-text">Serviços</span>
           </h2>
           <p className="mx-auto max-w-2xl text-zinc-400">
             Desenvolvimento full-stack, design e criação de conteúdo digital.
@@ -93,7 +94,7 @@ export default function Products() {
           className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3"
         >
           {services.map((service) => {
-            const Icon = service.icon
+            const Icon = service.icon;
             return (
               <motion.div
                 key={service.title}
@@ -106,10 +107,20 @@ export default function Products() {
                   <div
                     className={`mb-5 flex h-14 w-14 items-center justify-center rounded-xl ${service.iconBg} backdrop-blur-sm transition-all duration-500 group-hover:scale-110 ${service.iconColor}`}
                   >
-                    <Icon size={26} />
+                    {service.img ? (
+                      <img
+                        src={service.img}
+                        alt={service.title}
+                        className="h-7 w-7 object-contain"
+                      />
+                    ) : (
+                      Icon && <Icon size={26} />
+                    )}
                   </div>
 
-                  <h3 className="mb-3 text-lg font-bold text-white">{service.title}</h3>
+                  <h3 className="mb-3 text-lg font-bold text-white">
+                    {service.title}
+                  </h3>
                   <p className="mb-5 text-sm leading-relaxed text-zinc-400">
                     {service.description}
                   </p>
@@ -128,10 +139,10 @@ export default function Products() {
 
                 <div className="absolute -right-10 -bottom-10 h-32 w-32 rounded-full bg-gradient-to-br from-white/5 to-transparent opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
               </motion.div>
-            )
+            );
           })}
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
