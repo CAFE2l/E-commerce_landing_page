@@ -6,10 +6,10 @@ const footerLinks = [
   {
     label: "Tecnologias",
     links: [
-      { name: "HTML/CSS" },
-      { name: "JavaScript" },
-      { name: "PHP 8" },
-      { name: "MySQL" },
+      { name: "HTML/CSS", href: "#" },
+      { name: "JavaScript", href: "#" },
+      { name: "PHP 8", href: "#" },
+      { name: "MySQL", href: "#" },
     ],
   },
   {

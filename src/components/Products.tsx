@@ -1,11 +1,13 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import { Palette, Video } from "lucide-react";
 
 const services = [
   {
     img: "/icons/vscode.png",
+    icon: undefined,
     title: "Desenvolvimento Full-Stack",
     description: "Criação de sites, e-commerces e aplicações web robustas.",
     techs: ["HTML5", "CSS3", "JavaScript", "React", "PHP", "MySQL"],
@@ -94,7 +96,7 @@ export default function Products() {
           className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3"
         >
           {services.map((service) => {
-            const Icon = service.icon;
+            const Icon = service.icon as React.ElementType | undefined;
             return (
               <motion.div
                 key={service.title}
@@ -108,14 +110,10 @@ export default function Products() {
                     className={`mb-5 flex h-14 w-14 items-center justify-center rounded-xl ${service.iconBg} backdrop-blur-sm transition-all duration-500 group-hover:scale-110 ${service.iconColor}`}
                   >
                     {service.img ? (
-                      <img
-                        src={service.img}
-                        alt={service.title}
-                        className="h-7 w-7 object-contain"
-                      />
-                    ) : (
-                      Icon && <Icon size={26} />
-                    )}
+                      <img src={service.img} alt={service.title} className="h-7 w-7 object-contain" />
+                    ) : Icon ? (
+                      <Icon size={26} />
+                    ) : null}
                   </div>
 
                   <h3 className="mb-3 text-lg font-bold text-white">
