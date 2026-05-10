@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cafe-black: #050505;
+  --color-cafe-red: #FF3C38;
+  --color-cafe-orange: #FF7A00;
+  --color-cafe-yellow: #FFD000;
+  --color-cafe-white: #FFFFFF;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #FF3C38 #050505;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #050505;
+    color: #FFFFFF;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #FF3C38;
+    color: #FFFFFF;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #FF3C38, #FF7A00, #FFD000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-reverse {
+    background: linear-gradient(135deg, #FFD000, #FF7A00, #FF3C38);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255, 60, 56, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 60, 56, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .bg-grid-light {
+    background-image:
+      linear-gradient(rgba(255, 60, 56, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 60, 56, 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(rgba(255, 60, 56, 0.15) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  .bg-dots-sm {
+    background-image: radial-gradient(rgba(255, 208, 0, 0.1) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .glow-red {
+    box-shadow: 0 0 30px rgba(255, 60, 56, 0.3), 0 0 60px rgba(255, 60, 56, 0.1);
+  }
+
+  .glow-red-lg {
+    box-shadow: 0 0 50px rgba(255, 60, 56, 0.25), 0 0 100px rgba(255, 60, 56, 0.08);
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 30px rgba(255, 122, 0, 0.3), 0 0 60px rgba(255, 122, 0, 0.1);
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 30px rgba(255, 208, 0, 0.3), 0 0 60px rgba(255, 208, 0, 0.1);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px rgba(255, 60, 56, 0.5), 0 0 40px rgba(255, 122, 0, 0.3);
+  }
+
+  .glow-text-lg {
+    text-shadow: 0 0 30px rgba(255, 60, 56, 0.6), 0 0 60px rgba(255, 122, 0, 0.4), 0 0 80px rgba(255, 208, 0, 0.2);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-md {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-lg {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-hover {
+    transition: all 0.3s ease;
+  }
+
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 60, 56, 0.2);
+  }
+
+  .card-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 60, 56, 0.05) 0%,
+      rgba(255, 122, 0, 0.05) 50%,
+      rgba(255, 208, 0, 0.05) 100%
+    );
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(135deg, #FF3C38, #FF7A00, #FFD000) 1;
+  }
+
+  .neon-border-red {
+    box-shadow: inset 0 0 0 1px rgba(255, 60, 56, 0.15), 0 0 15px rgba(255, 60, 56, 0.1);
+  }
+
+  .neon-border-orange {
+    box-shadow: inset 0 0 0 1px rgba(255, 122, 0, 0.15), 0 0 15px rgba(255, 122, 0, 0.1);
+  }
+
+  .led-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 60, 56, 0.4), rgba(255, 122, 0, 0.4), rgba(255, 208, 0, 0.4), transparent);
+  }
+
+  .led-line-vertical {
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(255, 60, 56, 0.4), rgba(255, 122, 0, 0.4), rgba(255, 208, 0, 0.4), transparent);
+  }
+}
