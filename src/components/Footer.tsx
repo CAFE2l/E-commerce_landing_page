@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { Code2, MessageCircle, Mail, Globe } from "lucide-react";
+import { motion } from "framer-motion"
+import { Code2, Globe } from "lucide-react"
 
 const footerLinks = [
   {
@@ -17,26 +17,55 @@ const footerLinks = [
     label: "Serviços",
     links: [
       { name: "Cloudinary", href: "https://cloudinary.com" },
-      { name: "Mercado Pago", href: "" },
+      { name: "Mercado Pago", href: "#" },
       { name: "InfinityFree", href: "#" },
     ],
   },
   {
     label: "Links",
     links: [
-      { name: "Documentação", href: "#" },
+      { name: "Documentação", href: "/documentacao" },
       { name: "Status", href: "#" },
       { name: "Changelog", href: "#" },
     ],
   },
-];
+]
 
 const socialLinks = [
-  { icon: Code2, label: "GitHub", href: "#" },
-  { icon: MessageCircle, label: "Discord", href: "#" },
-  { icon: Mail, label: "E-mail", href: "#" },
-  { icon: Globe, label: "Site", href: "#" },
-];
+  { label: "GitHub", href: "#", icon: <Code2 size={18} /> },
+  {
+    label: "Discord",
+    href: "#",
+    icon: (
+      <img
+        src="/icons/8-bit/discord.png"
+        alt="Discord"
+        className="h-5 w-5 object-contain pixelated"
+      />
+    ),
+  },
+  {
+    label: "E-mail",
+    href: "#",
+    icon: (
+      <img
+        src="/icons/8-bit/gmail.png"
+        alt="E-mail"
+        className="h-5 w-5 object-contain pixelated"
+      />
+    ),
+  },
+  { label: "Site", href: "#", icon: <Globe size={18} /> },
+]
+
+const brandIcons = [
+  { file: "youtube.png", label: "YouTube" },
+  { file: "twitter.png", label: "Twitter" },
+  { file: "whatsapp.png", label: "WhatsApp" },
+  { file: "telegram.png", label: "Telegram" },
+  { file: "linkedin.png", label: "LinkedIn" },
+  { file: "pinterest.png", label: "Pinterest" },
+]
 
 export default function Footer() {
   return (
@@ -58,7 +87,7 @@ export default function Footer() {
             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="lg:col-span-1"
           >
-            <a href="#" className="group mb-4 flex items-center gap-2">
+            <a href="/" className="group mb-4 flex items-center gap-2">
               <span className="text-2xl font-black tracking-tight text-white transition-all duration-300 group-hover:opacity-80">
                 CAFÉ
               </span>
@@ -71,19 +100,16 @@ export default function Footer() {
               para creators modernos.
             </p>
             <div className="flex items-center gap-3">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-zinc-500 transition-all duration-300 hover:bg-red-500/10 hover:text-red-400 hover:shadow-[0_0_15px_rgba(255,60,56,0.15)]"
-                  >
-                    <Icon size={18} />
-                  </a>
-                );
-              })}
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-zinc-500 transition-all duration-300 hover:bg-red-500/10 hover:text-red-400 hover:shadow-[0_0_15px_rgba(255,60,56,0.15)]"
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </motion.div>
 
@@ -119,10 +145,39 @@ export default function Footer() {
         </div>
 
         <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="mt-12 border-t border-white/5 pt-8"
+        >
+          <p className="mb-4 text-center text-[10px] font-medium uppercase tracking-[0.2em] text-zinc-600">
+            Presença digital do criador
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-5">
+            {brandIcons.map((brand) => (
+              <div
+                key={brand.label}
+                className="group relative flex h-10 w-10 items-center justify-center rounded-lg bg-white/[0.03] transition-all duration-300 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,60,56,0.1)]"
+              >
+                <img
+                  src={`/icons/8-bit/${brand.file}`}
+                  alt={brand.label}
+                  className="h-6 w-6 object-contain opacity-60 transition-all duration-300 group-hover:scale-110 group-hover:opacity-100 pixelated"
+                />
+                <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap text-[9px] text-zinc-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  {brand.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.6 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
           className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row"
         >
           <p className="text-xs text-zinc-600">
@@ -152,5 +207,5 @@ export default function Footer() {
         </motion.div>
       </div>
     </footer>
-  );
+  )
 }

@@ -157,4 +157,10 @@
     width: 1px;
     background: linear-gradient(180deg, transparent, rgba(255, 60, 56, 0.4), rgba(255, 122, 0, 0.4), rgba(255, 208, 0, 0.4), transparent);
   }
+
+  .pixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
 }
