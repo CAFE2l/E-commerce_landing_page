@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const floatingAnimation = {
   y: [0, -12, 0],
   transition: { duration: 4, repeat: Infinity, ease: "easeInOut" as const },
-}
+};
 
 const glowPulse = {
   scale: [1, 1.15, 1],
   opacity: [0.25, 0.55, 0.25],
   transition: { duration: 3, repeat: Infinity, ease: "easeInOut" as const },
-}
+};
 
 const ledPulse = {
   opacity: [0.2, 0.5, 0.2],
   transition: { duration: 2.5, repeat: Infinity, ease: "easeInOut" as const },
-}
+};
 
 export default function Hero() {
   return (
@@ -36,7 +36,10 @@ export default function Hero() {
       <motion.div
         animate={ledPulse}
         className="absolute bottom-40 left-0 right-0 led-line"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(255,122,0,0.3), rgba(255,208,0,0.3), transparent)" }}
+        style={{
+          background:
+            "linear-gradient(90deg, transparent, rgba(255,122,0,0.3), rgba(255,208,0,0.3), transparent)",
+        }}
       />
 
       <div className="absolute top-1/3 left-0 h-40 w-px bg-gradient-to-b from-transparent via-red-500/30 to-transparent" />
@@ -56,13 +59,17 @@ export default function Hero() {
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-red-500/5 px-4 py-1.5 text-xs font-medium text-red-400 backdrop-blur-sm"
           >
             <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-            Marketplace Digital — Lançamento 2026
+            Marketplace Digital — Lançamento em 2026
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{
+              delay: 0.3,
+              duration: 0.8,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
             className="mb-6 text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
           >
             <span className="text-white">TUDO PARA SUA</span>
@@ -78,8 +85,8 @@ export default function Hero() {
             transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
             className="mx-auto mb-10 max-w-xl text-base leading-relaxed text-zinc-400 lg:mx-0 lg:text-lg"
           >
-            Overlays, assets, produtos digitais e uma experiência visual criada
-            para creators modernos.
+            Criação de web-aplicações, agências digitais, sites e landing pages
+            para você e seu negócio
           </motion.p>
 
           <motion.div
@@ -108,7 +115,11 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4, duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{
+            delay: 0.4,
+            duration: 1.2,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
           className="relative flex flex-1 items-center justify-center"
         >
           <motion.div
@@ -159,5 +170,5 @@ export default function Hero() {
         </motion.div>
       </motion.div>
     </section>
-  )
+  );
 }

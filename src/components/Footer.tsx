@@ -7,9 +7,9 @@ const footerLinks = [
     label: "Tecnologias",
     links: [
       { name: "HTML/CSS", href: "#" },
-      { name: "JavaScript", href: "#" },
-      { name: "PHP 8", href: "#" },
-      { name: "MySQL", href: "#" },
+      { name: "JavaScript", href: "https://www.w3schools.com/js/DEFAULT.asp" },
+      { name: "PHP 8", href: "https://www.php.net/docs.php" },
+      { name: "MySQL", href: "https://dev.mysql.com/doc/" },
     ],
   },
   {
@@ -91,8 +91,7 @@ export default function Footer() {
               </span>
             </a>
             <p className="mb-6 max-w-xs text-sm leading-relaxed text-zinc-500">
-              Sua identidade digital começa aqui. Overlays, assets e muito mais
-              para creators modernos.
+              Sua identidade digital começa aqui.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               {socialLinks.map((social) => (
@@ -130,6 +129,8 @@ export default function Footer() {
                   <li key={link.name}>
                     <a
                       href={link.href}
+                      target={link.href?.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href?.startsWith("http") ? "noopener noreferrer" : undefined}
                       className="text-sm text-zinc-500 transition-all duration-300 hover:text-white hover:pl-1"
                     >
                       {link.name}

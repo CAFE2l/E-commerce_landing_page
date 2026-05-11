@@ -21,7 +21,7 @@ const services = [
     title: "Design & UI/UX",
     description:
       "Interfaces modernas, focadas em experiência do usuário e identidade visual forte.",
-    techs: ["Figma", "Canva", "Apresentações"],
+    techs: ["Figma", "Canva"],
     gradient: "from-orange-500/10 via-yellow-400/5 to-transparent",
     borderGlow: "group-hover:border-orange-500/30",
     iconColor: "text-orange-400",
@@ -110,7 +110,11 @@ export default function Products() {
                     className={`mb-5 flex h-14 w-14 items-center justify-center rounded-xl ${service.iconBg} backdrop-blur-sm transition-all duration-500 group-hover:scale-110 ${service.iconColor}`}
                   >
                     {service.img ? (
-                      <img src={service.img} alt={service.title} className="h-7 w-7 object-contain" />
+                      <img
+                        src={service.img}
+                        alt={service.title}
+                        className="h-7 w-7 object-contain"
+                      />
                     ) : Icon ? (
                       <Icon size={26} />
                     ) : null}

@@ -1,7 +1,6 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { motion } from "framer-motion";
 
 export default function CTA() {
   return (
@@ -14,12 +13,21 @@ export default function CTA() {
 
       <motion.div
         animate={{ opacity: [0.2, 0.4, 0.2] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" as const }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut" as const,
+        }}
         className="absolute top-0 left-0 right-0 led-line"
       />
       <motion.div
         animate={{ opacity: [0.2, 0.4, 0.2] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" as const, delay: 1.5 }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut" as const,
+          delay: 1.5,
+        }}
         className="absolute bottom-0 left-0 right-0 led-line"
       />
 
@@ -44,13 +52,14 @@ export default function CTA() {
           <h2 className="mb-6 text-4xl font-black leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl">
             PRONTO PARA CONSTRUIR SUA
             <br />
-            <span className="text-gradient glow-text-lg">IDENTIDADE DIGITAL</span>
+            <span className="text-gradient glow-text-lg">
+              IDENTIDADE DIGITAL
+            </span>
             ?
           </h2>
 
           <p className="mx-auto mb-10 max-w-xl text-base leading-relaxed text-zinc-400">
-            Junte-se a milhares de creators que já estão elevando seu nível com
-            a CAFÉ STORE.
+            Junte-se aos serviços oferecidos pela CAFÉ STORE.
           </p>
 
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -61,13 +70,10 @@ export default function CTA() {
             >
               <a
                 href="/documentacao"
-                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 p-[2px] transition-all duration-500 hover:shadow-[0_0_60px_rgba(255,122,0,0.4)] hover:shadow-red-500/25"
+                className="inline-flex items-center overflow-hidden rounded-2xl bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 p-[2px] transition-all duration-500 hover:shadow-[0_0_60px_rgba(255,122,0,0.4)] hover:shadow-red-500/25"
               >
-                <span className="block rounded-2xl bg-cafe-black px-10 py-4 text-base font-bold text-white transition-all duration-500 group-hover:bg-transparent sm:text-lg">
+                <span className="block rounded-2xl bg-cafe-black px-8 py-4 text-base font-bold text-white transition-all duration-500 hover:bg-transparent sm:text-lg">
                   Acessar Documentação Completa
-                </span>
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-white opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0" style={{ transform: "translateX(-10px)" }}>
-                  <ArrowRight size={20} />
                 </span>
               </a>
             </motion.div>
@@ -77,5 +83,5 @@ export default function CTA() {
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/40 via-orange-500/30 to-transparent" />
     </section>
-  )
+  );
 }
