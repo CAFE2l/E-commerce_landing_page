@@ -53,14 +53,14 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <button className="rounded-lg px-4 py-2 text-sm font-medium text-zinc-400 transition-all duration-300 hover:bg-white/5 hover:text-white">
+          <a href="https://cafe-store-one.vercel.app" className="rounded-lg px-4 py-2 text-sm font-medium text-zinc-400 transition-all duration-300 hover:bg-white/5 hover:text-white">
             Entrar
-          </button>
-          <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 p-[1px] transition-all duration-500 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,122,0,0.35)]">
+          </a>
+          <a href="https://cafe-store-one.vercel.app" className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 p-[1px] transition-all duration-500 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,122,0,0.35)]">
             <span className="block rounded-lg bg-cafe-black px-5 py-2 text-sm font-semibold text-white transition-all duration-300 group-hover:bg-transparent">
               Começar Agora
             </span>
-          </button>
+          </a>
         </div>
 
         <button
@@ -92,12 +92,12 @@ export default function Header() {
                 </a>
               ))}
               <div className="mt-4 flex flex-col gap-3">
-                <button className="w-full rounded-lg bg-white/5 px-4 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-white/10">
+                <a href="https://cafe-store-one.vercel.app" className="w-full rounded-lg bg-white/5 px-4 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-white/10 text-center">
                   Entrar
-                </button>
-                <button className="w-full rounded-lg bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 px-4 py-3 text-sm font-semibold text-black transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,122,0,0.35)]">
+                </a>
+                <a href="https://cafe-store-one.vercel.app" className="w-full rounded-lg bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 px-4 py-3 text-sm font-semibold text-black transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,122,0,0.35)] text-center">
                   Começar Agora
-                </button>
+                </a>
               </div>
             </nav>
           </motion.div>
